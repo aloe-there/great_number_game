@@ -12,9 +12,9 @@ def start_game():
     print("hi")
     return render_template('index.html')
 
-@app.route('/guess', methods=["GET"])
+@app.route('/guess', methods=["POST"])
 def guess():
-    session["my_guess"] = int(request.args["my_guess"])
+    session["my_guess"] = int(request.form["my_guess"])
     if session["my_guess"] == int(session["number"]):
         session["message"] = f"The number is {session['number']}!"
     elif session["my_guess"] > int(session["number"]):

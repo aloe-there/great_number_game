@@ -21,7 +21,7 @@
         <h2>You took {{ session["guesses"] }} guesses</h2>
         <a href="reset_session"><button class="bg-light border border-dark m-3">Play Again</button></a>
         {% else %}
-        <form action="/guess">
+        <form action="/guess" method="POST">
             <input type="text" name="my_guess">
             <button class="bg-light border border-dark m-3">Submit</button>
         </form>
